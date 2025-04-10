@@ -4,6 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,13 +32,13 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={inter.className}
         >
           <div className="w-full bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
 
             <Navbar />
           </div>
-          <div className="w-full bg-slate-100 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+          <div className="w-full bg-slate-100 pt-5 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
             {children}
           </div>
         </body>

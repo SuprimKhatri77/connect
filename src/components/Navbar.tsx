@@ -20,15 +20,15 @@ const Navbar = () => {
                 <div className='flex gap-6 text-gray-600'>
                     <Link href='/' className='flex gap-2 items-center'>
                         <Image src='/home.png' alt="homepage" width={16} height={16} className='w-4 h-4' />
-                        <span className='pt-1'>Homepage</span>
+                        <span>Homepage</span>
                     </Link>
                     <Link href='/' className='flex gap-2 items-center'>
                         <Image src='/friends.png' alt="homepage" width={16} height={16} className='w-4 h-4' />
-                        <span className='pt-1'>Friends</span>
+                        <span>Friends</span>
                     </Link>
                     <Link href='/' className='flex gap-2 items-center'>
                         <Image src='/stories.png' alt="homepage" width={16} height={16} className='w-4 h-4' />
-                        <span className='pt-1'>Stories</span>
+                        <span>Stories</span>
                     </Link>
                 </div>
                 <div className='hidden lg:flex p-2 bg-slate-100 items-center rounded-xl'>
