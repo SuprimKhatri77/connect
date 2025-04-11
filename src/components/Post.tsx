@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { Comments } from './Comments'
 
 export const Post = () => {
+
     return (
+
+
         <div className='flex flex-col gap-4'>
             {/* user */}
             <div className='flex items-center justify-between'>
@@ -50,5 +53,6 @@ export const Post = () => {
             </div>
             <Comments />
         </div>
+
     )
 }
