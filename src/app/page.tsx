@@ -1,8 +1,8 @@
-import { RightMenu } from "@/components/RightMenu";
-import { LeftMenu } from "@/components/LeftMenu";
+import { RightMenu } from "@/components/rightmmenu/RightMenu";
+import { LeftMenu } from "@/components/leftmenu/LeftMenu";
 import { Stories } from "@/components/Stories";
 import { AddPost } from "@/components/AddPost";
-import { Feed } from "@/components/Feed";
+import { Feed } from "@/components/feed/Feed";
 
 
 export default function Home() {

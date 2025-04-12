@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { User } from '@/generated/prisma'
 import { auth } from '@clerk/nextjs/server'
 import prisma from '@/library/client'
+import { UserInfoCardInteraction } from './UserInfoCardInteraction'
+import { UpdateUser } from './UpdateUser'
 
 
 export const UserInformationCard = async ({ user }: { user: User }) => {
@@ -53,7 +55,9 @@ export const UserInformationCard = async ({ user }: { user: User }) => {
         <div className='p-4 bg-white rounded-lg shadow-md text-sm flex flex-col gap-4'>
             <div className='flex justify-between items-center font-medium'>
                 <span className='text-gray-500'>UserInformation</span>
-                <Link href='/' className='text-blue-500 text-xs'>See all</Link>
+                {currentUserId === user.id ? (<UpdateUser user={user} />) : (
+                    <Link href='/' className='text-blue-500 text-xs'>See all</Link>
+                )}
             </div>
 
             <div className='flex flex-col gap-4 text-gray-500'>
@@ -106,12 +110,10 @@ export const UserInformationCard = async ({ user }: { user: User }) => {
                         <span>Joined {formattedDate}  </span>
                     </div>
                 </div>
-                {isUserBlocked || isFollowing || isFollowingSent ? (
-                    <>
-                        <button className='bg-blue-500 text-white rounded-md text-sm p-2'>Follow</button>
-                        <span className='text-red-400 self-end text-xs cursor-pointer'>Block User</span>
-                    </>
-                ) : null}
+                {(currentUserId && currentUserId !== user.id) && (
+
+                    <UserInfoCardInteraction userId={user.id} currentUserId={currentUserId} isUserBlocked={isUserBlocked} isFollowing={isFollowing} isFollowingSent={isFollowingSent} />
+                )}
             </div>
         </div>
     )

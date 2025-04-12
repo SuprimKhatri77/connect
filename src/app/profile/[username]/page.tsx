@@ -1,11 +1,10 @@
-import { LeftMenu } from "@/components/LeftMenu"
-import { RightMenu } from "@/components/RightMenu"
-import { Feed } from "@/components/Feed"
+import { RightMenu } from "@/components/rightmmenu/RightMenu"
+import { LeftMenu } from "@/components/leftmenu/LeftMenu"
+import { Feed } from "@/components/feed/Feed"
 import Image from "next/image"
 import prisma from "@/library/client"
 import { notFound } from "next/navigation"
 import { auth } from "@clerk/nextjs/server"
-import { use } from "react"
 
 
 const ProfilePage = async ({ params }: { params: { username: string } }) => {
